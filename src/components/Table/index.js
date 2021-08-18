@@ -67,7 +67,5 @@ const TableComponent = ({ tableData, loading, onRowClick }) => {
   );
 };
 
-export default TableComponent;
-
 
 export default TableComponent;
