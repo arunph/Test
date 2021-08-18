@@ -24,41 +24,7 @@ const TableComponent = ({ tableData, loading, onRowClick }) => {
             <th>Rocket</th>
           </tr>
         </thead>
-        <tbody className="table-body">
-          {!loading &&
-            (tableData && tableData.length > 0 ? (
-              <>
-                {tableData.map((el, idx) => (
-                  <tr
-                    key={idx}
-                    className="table-row"
-                    onClick={() => onRowClick(el)}
-                  >
-                    <td>{el.flight_number}</td>
-                    <td>
-                      {format(
-                        parseISO(el.launch_date_utc),
-                        "dd MMMM yyyy 'at' HH:mm"
-                      )}
-                    </td>
-                    <td>{el.launch_site.site_name}</td>
-                    <td>{el.mission_name}</td>
-                    <td>
-                      {el.rocket.second_stage.payloads
-                        .map((el) => el.orbit)
-                        .join(", ")}
-                    </td>
-                    <td>{getStatus(el.upcoming, el.launch_success)}</td>
-                    <td>{el.rocket.rocket_name}</td>
-                  </tr>
-                ))}
-              </>
-            ) : (
-              <tr className="position-absolute no-result">
-                <td>No result found for the specified filter</td>
-              </tr>
-            ))}
-        </tbody>
+
       </Table>
       {loading && (
         <div className="position-absolute loading">
