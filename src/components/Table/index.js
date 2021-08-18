@@ -10,21 +10,20 @@ const TableComponent = ({ tableData, loading, onRowClick }) => {
   return (
     <div
       className="table-component position-relative"
-      style={{ minHeight: 300 }}
+      style={{ minHeight: 500 }}
     >
       <Table hover className="mb-0">
         <thead className="table-header">
           <tr>
             <th>No:</th>
             <th>Launched (UTC)</th>
-            <th>Location</th>
             <th>Mission</th>
             <th>Orbit</th>
             <th>Launch Status</th>
             <th>Rocket</th>
           </tr>
         </thead>
- <tbody className="table-body">
+        <tbody className="table-body">
           {!loading &&
             (tableData && tableData.length > 0 ? (
               <>
@@ -67,5 +66,8 @@ const TableComponent = ({ tableData, loading, onRowClick }) => {
     </div>
   );
 };
+
+export default TableComponent;
+
 
 export default TableComponent;
